@@ -3,43 +3,36 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src https://* 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src https://* 'self'; script-src 'self'; img-src https://* 'self';">
     <link href="./styles.css" rel="stylesheet">
     <link href="./node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <title>Whether in electron!</title>
+    <title>Weather in electron!&deg;</title>
   </head>
   <body>
     <header>      
-      <img src="./images/whether.jpg" width="100%" height="200px">
-      <div class="header-text">This is your whether finder</div>
+      <img src="./images/weather.jpg" width="100%" height="200px">
+      <div class="header-text">This is your weather finder</div>
       <div class="header-text-select">Select a city</div>
     </header>
     <main>
       <div class="d-flex justify-content-around p-4">
         <div class="list-group w-25">
-          <button type="button" class="list-group-item list-group-item-action">
+          <button type="button" id="btn-london" class="list-group-item list-group-item-action">
             London
           </button>
-          <button type="button" class="list-group-item list-group-item-action">Gold coast</button>
-          <button type="button" class="list-group-item list-group-item-action">Las vegas</button>
-          <button type="button" class="list-group-item list-group-item-action">Rio de janeiro</button>
-          <button type="button" class="list-group-item list-group-item-action">Natal</button>
+          <button type="button" id="btn-goldcoast" class="list-group-item list-group-item-action">Gold coast</button>
+          <button type="button" class="list-group-item list-group-item-action" id="btn-lasvegas">Las vegas</button>
+          <button type="button" class="list-group-item list-group-item-action" id="btn-riodejaneiro">Rio de janeiro</button>
+          <button type="button" class="list-group-item list-group-item-action" id="btn-natal">Natal</button>
         </div>
-        <div class="card w-50 d-flex flex-column text-center">
-          <div class="card-body p-0">
-            <div class="w-25 d-inline-flex">
-              
-              <img src="https://openweathermap.org/img/wn/04n@2x.png" alt="description" width="50px">
-            </div>
-            <h6>overcast clouds</h6>
-            <h3 class="m-0">London</h3>
-            <h6>283.99 F</h6>
+        <div class="card w-50 d-flex flex-column align-items-center text-center weather-card">
+          <div class="card-body p-0 w-50 weather-card-body">
+            Choose a city to see the weather right now!! ;)
           </div>
         </div>
       </div>
     </main>
-
     <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <script src="./renderer.js" defer></script>
   </body>
 </html>

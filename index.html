@@ -3,15 +3,41 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src https://* 'self';">
     <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <title>Whether in electron!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <header>      
+      <img src="./images/whether.jpg" width="100%" height="200px">
+      <div class="header-text">This is your whether finder</div>
+      <div class="header-text-select">Select a city</div>
+    </header>
+    <main>
+      <div class="d-flex justify-content-around p-4">
+        <div class="list-group w-25">
+          <button type="button" class="list-group-item list-group-item-action">
+            London
+          </button>
+          <button type="button" class="list-group-item list-group-item-action">Gold coast</button>
+          <button type="button" class="list-group-item list-group-item-action">Las vegas</button>
+          <button type="button" class="list-group-item list-group-item-action">Rio de janeiro</button>
+          <button type="button" class="list-group-item list-group-item-action">Natal</button>
+        </div>
+        <div class="card w-50 d-flex flex-column text-center">
+          <div class="card-body p-0">
+            <div class="w-25 d-inline-flex">
+              
+              <img src="https://openweathermap.org/img/wn/04n@2x.png" alt="description" width="50px">
+            </div>
+            <h6>overcast clouds</h6>
+            <h3 class="m-0">London</h3>
+            <h6>283.99 F</h6>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
